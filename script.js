@@ -5,10 +5,14 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
 
-var mapRows = mappingData.rows
+var mappingDataArray = mappingData.rows;
 
-for (var i=0; i<mapRows.length; i++) {
-	var location = mapRows[i]
+for (var i=0; i<mappingDataArray.length; i++) {
+	var locationObject = mappingDataArray[i];
 	
+	var marker = L.marker([locationObject.latitude,locationObject.longitude]).addTo(map);
 	
+
 }
+
+
